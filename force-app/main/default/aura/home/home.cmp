@@ -1,0 +1,27 @@
+<aura:component controller="TvMazeAPI" implements="lightning:recordHomeTemplate" description="Template Component usage testing" access="global">
+    
+    <div class="slds-icon-eq slds-is-animated" title="Description of the icon when needed">
+        <div class="slds-icon-eq__bar"></div>
+        <div class="slds-icon-eq__bar"></div>
+        <div class="slds-icon-eq__bar"></div>
+        <span class="slds-assistive-text">Text alternative when needed</span>
+    </div>
+    <aura:attribute name="search" type="String"/>
+    <aura:attribute name="result" type="Map"/>
+    <div>
+		<ui:inputText label="Search" aura:id="s" value="{!v.search}"/>
+    	<ui:button label="click me!" press="{!c.searchKey}"/>
+    </div>
+    <aura:iteration items="{!v.result}" var="ct">
+    <div class="preview">
+        <img src="{!ct.image}" />
+        <p><strong>Name: </strong>{!ct.name}</p>
+        <p><strong>Status: </strong>{!ct.status}</p>
+       <summary><strong>Summary: </strong>{!ct.summary}</summary>
+	</div>
+    </aura:iteration>
+    
+   
+
+    
+</aura:component>

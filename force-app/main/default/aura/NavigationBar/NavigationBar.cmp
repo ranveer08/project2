@@ -1,0 +1,6 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+	<div class="slds-context-bar">
+        <lightning:button variant="brand" label="Home" title="Brand action" onclick="{! c.handleClick }"/>
+        <button class="slds-button slds-button_brand">Saved Shows</button>
+	</div>
+</aura:component>

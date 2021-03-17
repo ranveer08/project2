@@ -1,0 +1,34 @@
+<aura:component controller="TvMazeAPI" implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="search" type="String"/>
+    <aura:attribute name="result" type="List"/>
+    <aura:attribute name="id" type="String" />
+ 
+    <div class="hero-image" style="height: 400px">
+        
+            <h1 class="hero-text" style="font-size:50px;
+                                         text-align: center;
+                                         position: absolute;
+                                         top: 50%;
+                                         left: 50%;
+                                         transform: translate(-50%, -50%);
+                                         color: white;
+                                         ">Welcome to TV Maze</h1>
+    </div>
+    <div>
+    <div class="searchDiv" style="text-align:center; margin: auto; width: 10%; ">
+		<Lightning:input class = "search" style="margin-bottom: 20px; " aura:id="s" value="{!v.search}" placeholder="enter show"/>
+    	<Lightning:button variant="brand"  class="btn" label="Search" onclick="{!c.searchKey}"/>
+    </div>
+    </div>
+    <aura:iteration items="{!v.result}" var="ct">
+    <div class="preview">
+        <img src="{!ct.image__c}" />
+        <p><strong>Name: </strong>{!ct.Name}</p>
+        <p><strong>Status: </strong>{!ct.Status__c}</p>
+       <summary><strong>Summary: </strong>{!ct.Summary__c}</summary>
+        <lightning:button variant="brand" label="Save" title="Save" onclick="{! c.saveToDb }" value="{!ct}"/>
+	</div>
+    </aura:iteration>
+    
+            
+</aura:component>

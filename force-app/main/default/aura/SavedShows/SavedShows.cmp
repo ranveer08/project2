@@ -1,0 +1,16 @@
+<aura:component controller="TvMazeAPI" implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name = "disShow" type="List" />
+    <aura:handler name="init" value="{!this}" action="{!c.displayShow}" />
+    
+    <aura:iteration items="{!v.disShow}" var="ds">
+    
+        
+    <div class="preview">
+        <img src="{!ds.image__c}" />
+        <p><strong>Name: </strong>{!ds.Name}</p>
+        <p><strong>Status: </strong>{!ds.Status__c}</p>
+       <summary><strong>Summary: </strong>{!ds.Summary__c}</summary>
+	</div>
+    </aura:iteration>
+	
+</aura:component>

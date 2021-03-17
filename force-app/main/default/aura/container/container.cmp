@@ -1,0 +1,4 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+	<c:home/>
+    <c:Testingpage/>
+</aura:component>
